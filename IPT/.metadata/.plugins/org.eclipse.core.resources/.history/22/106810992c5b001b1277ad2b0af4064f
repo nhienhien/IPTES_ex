@@ -1,0 +1,25 @@
+/*
+ * ORG1411_GPS.c
+ *
+ *  Created on: 20 thg 1, 2021
+ *      Author: Admin
+ */
+
+
+#include "ORG1411_GPS.h"
+
+//--------------------------DelayMicro----------------------------//
+__STATIC_INLINE void DelayMicro(__IO uint32_t micros)
+{
+micros *= (SystemCoreClock / 1000000) / 9;
+/* Wait till done */
+while (micros--) ;
+}
+#ifdef __GNUC__
+ /* With GCC/RAISONANCE, small printf (option LD Linker->Libraries->Small printf
+ set to 'Yes') calls __io_putchar() */
+ #define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
+#else
+ #define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
+#endif /* __GNUC__ */
+//-----------------------------------------------------------------//

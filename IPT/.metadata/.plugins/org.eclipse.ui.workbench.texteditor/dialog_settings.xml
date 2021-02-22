@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="MAX_ARRAY"/>
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+			<item value="MAX_ARRAY"/>
+			<item value="Rx_index"/>
+			<item value="start_Receive"/>
+			<item value="take_Coordinate"/>
+			<item value="uint8_t"/>
+			<item value="end_Buffer"/>
+			<item value="HAL_UART_Receive_IT"/>
+			<item value="convert_Coordinate"/>
+			<item value="Longtitude_ARR"/>
+			<item value="Rx_Data"/>
+			<item value="lat_domain"/>
+			<item value="lat_Location"/>
+			<item value="HAL_UART_RxCpltCallback"/>
+			<item value="send_Coordinate_to_Serve"/>
+			<item value="flag_Alarm"/>
+		</list>
+		<list key="replacehistory">
+			<item value="int"/>
+			<item value="convert_Coordinate"/>
+			<item value="allowDetaching"/>
+			<item value="warningOutSafeArea"/>
+			<item value="warningDetached"/>
+			<item value="StatusAllowRemove"/>
+			<item value="DetechingStrapRemoval"/>
+			<item value="deteching_"/>
+			<item value="deteching_strap_"/>
+			<item value="time_stage"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="1344"/>
+		<item key="DIALOG_Y_ORIGIN" value="497"/>
+		<item key="DIALOG_WIDTH" value="336"/>
+		<item key="DIALOG_HEIGHT" value="450"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
+</section>

@@ -1,0 +1,5 @@
+pms5003.c:10:6:PMS5003_ReceiveStart_IT	16	static
+pms5003.c:18:6:PMS5003_ReceiveData_IT	16	static
+pms5003.c:42:5:PMS5003_ReceiveData	24	static
+pms5003.c:69:6:PMS5003_sleep	16	static
+pms5003.c:75:6:PMS5003_wakeup	16	static

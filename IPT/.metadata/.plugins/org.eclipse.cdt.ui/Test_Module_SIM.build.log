@@ -1,0 +1,103 @@
+10:15:29 **** Incremental Build of configuration Debug for project Test_Module_SIM ****
+make -j8 all 
+arm-none-eabi-gcc "../ORG1411_GPS/ORG1411_GPS.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32L432xx -c -I../Drivers/CMSIS/Include -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"ORG1411_GPS/ORG1411_GPS.d" -MT"ORG1411_GPS/ORG1411_GPS.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "ORG1411_GPS/ORG1411_GPS.o"
+In file included from ../ORG1411_GPS/ORG1411_GPS.c:9:0:
+../ORG1411_GPS/ORG1411_GPS.h:16:19: error: unknown type name 'uint8_t'
+ void convert_Mode(uint8_t mode);
+                   ^~~~~~~
+../ORG1411_GPS/ORG1411_GPS.h:19:1: error: unknown type name 'uint8_t'
+ uint8_t NMEA_Checksum(char *Rx_Buffer);
+ ^~~~~~~
+../ORG1411_GPS/ORG1411_GPS.h:21:1: error: unknown type name 'uint8_t'
+ uint8_t check_Valid_Header(char *Rx_Buffer, uint8_t case_return);
+ ^~~~~~~
+../ORG1411_GPS/ORG1411_GPS.h:21:45: error: unknown type name 'uint8_t'
+ uint8_t check_Valid_Header(char *Rx_Buffer, uint8_t case_return);
+                                             ^~~~~~~
+../ORG1411_GPS/ORG1411_GPS.h:22:1: error: unknown type name 'uint8_t'
+ uint8_t take_Coordinate(char *Rx_Buffer);
+ ^~~~~~~
+../ORG1411_GPS/ORG1411_GPS.h:23:1: error: unknown type name 'uint8_t'
+ uint8_t convert_Coordinate(char *lat_Array, char *lng_Array);
+ ^~~~~~~
+../ORG1411_GPS/ORG1411_GPS.h:24:34: error: unknown type name 'UART_HandleTypeDef'
+ void ORG1411_GPS_Take_Coordinate(UART_HandleTypeDef *huart, USART_TypeDef *HUART);
+                                  ^~~~~~~~~~~~~~~~~~
+../ORG1411_GPS/ORG1411_GPS.h:24:61: error: unknown type name 'USART_TypeDef'
+ void ORG1411_GPS_Take_Coordinate(UART_HandleTypeDef *huart, USART_TypeDef *HUART);
+                                                             ^~~~~~~~~~~~~
+../ORG1411_GPS/ORG1411_GPS.c:20:16: error: 'MAX_ARRAY' undeclared here (not in a function); did you mean 'MATH_ERRNO'?
+ char Rx_Buffer[MAX_ARRAY] = {0};
+                ^~~~~~~~~
+                MATH_ERRNO
+../ORG1411_GPS/ORG1411_GPS.c:29:17: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'void'
+ __STATIC_INLINE void DelayMicro(__IO uint32_t micros)
+                 ^~~~
+../ORG1411_GPS/ORG1411_GPS.c: In function 'ON_OFF_Pulse':
+../ORG1411_GPS/ORG1411_GPS.c:46:2: warning: implicit declaration of function 'DelayMicro' [-Wimplicit-function-declaration]
+  DelayMicro(300);
+  ^~~~~~~~~~
+../ORG1411_GPS/ORG1411_GPS.c:47:5: warning: implicit declaration of function 'HAL_GPIO_WritePin' [-Wimplicit-function-declaration]
+     HAL_GPIO_WritePin(PIN_PWR_GPIO_Port, PIN_PWR_Pin, GPIO_PIN_RESET);
+     ^~~~~~~~~~~~~~~~~
+../ORG1411_GPS/ORG1411_GPS.c:47:40: error: expected expression before ',' token
+     HAL_GPIO_WritePin(PIN_PWR_GPIO_Port, PIN_PWR_Pin, GPIO_PIN_RESET);
+                                        ^
+../ORG1411_GPS/ORG1411_GPS.c:47:55: error: 'GPIO_PIN_RESET' undeclared (first use in this function)
+     HAL_GPIO_WritePin(PIN_PWR_GPIO_Port, PIN_PWR_Pin, GPIO_PIN_RESET);
+                                                       ^~~~~~~~~~~~~~
+../ORG1411_GPS/ORG1411_GPS.c:47:55: note: each undeclared identifier is reported only once for each function it appears in
+../ORG1411_GPS/ORG1411_GPS.c:49:40: error: expected expression before ',' token
+     HAL_GPIO_WritePin(PIN_PWR_GPIO_Port, PIN_PWR_Pin, GPIO_PIN_SET);
+                                        ^
+../ORG1411_GPS/ORG1411_GPS.c:49:55: error: 'GPIO_PIN_SET' undeclared (first use in this function); did you mean 'GPIO_PIN_RESET'?
+     HAL_GPIO_WritePin(PIN_PWR_GPIO_Port, PIN_PWR_Pin, GPIO_PIN_SET);
+                                                       ^~~~~~~~~~~~
+                                                       GPIO_PIN_RESET
+../ORG1411_GPS/ORG1411_GPS.c:51:40: error: expected expression before ',' token
+     HAL_GPIO_WritePin(PIN_PWR_GPIO_Port, PIN_PWR_Pin, GPIO_PIN_RESET);
+                                        ^
+../ORG1411_GPS/ORG1411_GPS.c:52:5: warning: implicit declaration of function 'HAL_Delay' [-Wimplicit-function-declaration]
+     HAL_Delay(800);
+     ^~~~~~~~~
+../ORG1411_GPS/ORG1411_GPS.c: In function 'convert_Mode':
+../ORG1411_GPS/ORG1411_GPS.c:58:12: warning: implicit declaration of function 'HAL_GPIO_ReadPin' [-Wimplicit-function-declaration]
+     while (HAL_GPIO_ReadPin(PIN_WAKEUP_GPIO_Port, PIN_WAKEUP_Pin) != 1)
+            ^~~~~~~~~~~~~~~~
+../ORG1411_GPS/ORG1411_GPS.c:58:49: error: expected expression before ',' token
+     while (HAL_GPIO_ReadPin(PIN_WAKEUP_GPIO_Port, PIN_WAKEUP_Pin) != 1)
+                                                 ^
+../ORG1411_GPS/ORG1411_GPS.c:61:49: error: expected expression before ',' token
+     while (HAL_GPIO_ReadPin(PIN_WAKEUP_GPIO_Port, PIN_WAKEUP_Pin) == 1)
+                                                 ^
+../ORG1411_GPS/ORG1411_GPS.c: At top level:
+../ORG1411_GPS/ORG1411_GPS.c:77:9: error: conflicting types for 'NMEA_Checksum'
+ uint8_t NMEA_Checksum(char *Rx_Buffer)
+         ^~~~~~~~~~~~~
+In file included from ../ORG1411_GPS/ORG1411_GPS.c:9:0:
+../ORG1411_GPS/ORG1411_GPS.h:19:9: note: previous declaration of 'NMEA_Checksum' was here
+ uint8_t NMEA_Checksum(char *Rx_Buffer);
+         ^~~~~~~~~~~~~
+../ORG1411_GPS/ORG1411_GPS.c: In function 'check_Valid_Header':
+../ORG1411_GPS/ORG1411_GPS.c:101:2: error: 'end_Buffer' undeclared (first use in this function); did you mean 'Rx_Buffer'?
+  end_Buffer = 0;
+  ^~~~~~~~~~
+  Rx_Buffer
+../ORG1411_GPS/ORG1411_GPS.c: At top level:
+../ORG1411_GPS/ORG1411_GPS.c:122:25: error: unknown type name 'UART_HandleTypeDef'
+ uint8_t take_Coordinate(UART_HandleTypeDef *huart, char *Rx_Buffer)
+                         ^~~~~~~~~~~~~~~~~~
+../ORG1411_GPS/ORG1411_GPS.c:172:28: error: unknown type name 'UART_HandleTypeDef'
+ uint8_t convert_Coordinate(UART_HandleTypeDef *huart, char *lat_Array, char *lng_Array)
+                            ^~~~~~~~~~~~~~~~~~
+../ORG1411_GPS/ORG1411_GPS.c:195:34: error: unknown type name 'UART_HandleTypeDef'
+ void ORG1411_GPS_Take_Coordinate(UART_HandleTypeDef *huart, USART_TypeDef *HUART)
+                                  ^~~~~~~~~~~~~~~~~~
+../ORG1411_GPS/ORG1411_GPS.c:195:61: error: unknown type name 'USART_TypeDef'
+ void ORG1411_GPS_Take_Coordinate(UART_HandleTypeDef *huart, USART_TypeDef *HUART)
+                                                             ^~~~~~~~~~~~~
+make: *** [ORG1411_GPS/subdir.mk:18: ORG1411_GPS/ORG1411_GPS.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+
+10:15:30 Build Failed. 24 errors, 4 warnings. (took 939ms)
+

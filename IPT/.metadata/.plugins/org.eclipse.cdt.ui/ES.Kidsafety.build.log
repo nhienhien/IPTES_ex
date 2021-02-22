@@ -1,0 +1,10 @@
+23:26:55 **** Incremental Build of configuration Debug for project ES.Kidsafety ****
+make -j8 all 
+arm-none-eabi-size   ES.Kidsafety.elf 
+   text	   data	    bss	    dec	    hex	filename
+  61032	    544	   2936	  64512	   fc00	ES.Kidsafety.elf
+Finished building: default.size.stdout
+ 
+
+23:26:56 Build Finished. 0 errors, 0 warnings. (took 599ms)
+

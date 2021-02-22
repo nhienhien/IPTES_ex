@@ -1,0 +1,124 @@
+11:41:51 **** Incremental Build of configuration Debug for project Test_Library_GPS ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/ORG1411_GPS.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F411xE -DDEBUG -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/ORG1411_GPS.d" -MT"Core/Src/ORG1411_GPS.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/ORG1411_GPS.o"
+../Core/Src/ORG1411_GPS.c:129:5: error: conflicting types for 'take_Coordinate'
+ int take_Coordinate(UART_HandleTypeDef *huart, char *Rx_Buffer)
+     ^~~~~~~~~~~~~~~
+In file included from ../Core/Src/ORG1411_GPS.c:9:0:
+../Core/Inc/ORG1411_GPS.h:22:5: note: previous declaration of 'take_Coordinate' was here
+ int take_Coordinate(char *Rx_Buffer);
+     ^~~~~~~~~~~~~~~
+../Core/Src/ORG1411_GPS.c: In function 'take_Coordinate':
+../Core/Src/ORG1411_GPS.c:135:23: warning: passing argument 1 of 'HAL_UART_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+   HAL_UART_Receive_IT(&huart, (int*)Rx_Data, 1);
+                       ^
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:364:0,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/ORG1411_GPS.c:8:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:699:19: note: expected 'UART_HandleTypeDef * {aka struct __UART_HandleTypeDef *}' but argument is of type 'UART_HandleTypeDef ** {aka struct __UART_HandleTypeDef **}'
+ HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+                   ^~~~~~~~~~~~~~~~~~~
+../Core/Src/ORG1411_GPS.c:135:31: warning: passing argument 2 of 'HAL_UART_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+   HAL_UART_Receive_IT(&huart, (int*)Rx_Data, 1);
+                               ^
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:364:0,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/ORG1411_GPS.c:8:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:699:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'int *'
+ HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+                   ^~~~~~~~~~~~~~~~~~~
+../Core/Src/ORG1411_GPS.c: At top level:
+../Core/Src/ORG1411_GPS.c:179:5: error: conflicting types for 'convert_Coordinate'
+ int convert_Coordinate(UART_HandleTypeDef *huart, char *lat_Array, char *lng_Array)
+     ^~~~~~~~~~~~~~~~~~
+In file included from ../Core/Src/ORG1411_GPS.c:9:0:
+../Core/Inc/ORG1411_GPS.h:23:5: note: previous declaration of 'convert_Coordinate' was here
+ int convert_Coordinate(char *lat_Array, char *lng_Array);
+     ^~~~~~~~~~~~~~~~~~
+../Core/Src/ORG1411_GPS.c: In function 'convert_Coordinate':
+../Core/Src/ORG1411_GPS.c:183:22: warning: passing argument 1 of 'take_Coordinate' from incompatible pointer type [-Wincompatible-pointer-types]
+  if (take_Coordinate(&huart, Rx_Buffer) == 1)
+                      ^
+../Core/Src/ORG1411_GPS.c:129:5: note: expected 'UART_HandleTypeDef * {aka struct __UART_HandleTypeDef *}' but argument is of type 'UART_HandleTypeDef ** {aka struct __UART_HandleTypeDef **}'
+ int take_Coordinate(UART_HandleTypeDef *huart, char *Rx_Buffer)
+     ^~~~~~~~~~~~~~~
+../Core/Src/ORG1411_GPS.c:190:3: warning: implicit declaration of function 'gcvt' [-Wimplicit-function-declaration]
+   gcvt(lat_Location, 10, Latitude_ARR);
+   ^~~~
+../Core/Src/ORG1411_GPS.c: In function 'ORG1411_GPS_Take_Coordinate':
+../Core/Src/ORG1411_GPS.c:205:22: warning: comparison of distinct pointer types lacks a cast
+  if (huart->Instance == huart)
+                      ^~
+../Core/Src/ORG1411_GPS.c:217:24: warning: passing argument 1 of 'HAL_UART_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+    HAL_UART_Receive_IT(&huart, (int*)Rx_Data, 1);
+                        ^
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:364:0,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/ORG1411_GPS.c:8:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:699:19: note: expected 'UART_HandleTypeDef * {aka struct __UART_HandleTypeDef *}' but argument is of type 'UART_HandleTypeDef ** {aka struct __UART_HandleTypeDef **}'
+ HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+                   ^~~~~~~~~~~~~~~~~~~
+../Core/Src/ORG1411_GPS.c:217:32: warning: passing argument 2 of 'HAL_UART_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+    HAL_UART_Receive_IT(&huart, (int*)Rx_Data, 1);
+                                ^
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:364:0,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/ORG1411_GPS.c:8:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:699:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'int *'
+ HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+                   ^~~~~~~~~~~~~~~~~~~
+../Core/Src/ORG1411_GPS.c:221:24: warning: passing argument 1 of 'HAL_UART_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+    HAL_UART_Receive_IT(&huart, (int*)Rx_Data, 1);
+                        ^
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:364:0,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/ORG1411_GPS.c:8:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:699:19: note: expected 'UART_HandleTypeDef * {aka struct __UART_HandleTypeDef *}' but argument is of type 'UART_HandleTypeDef ** {aka struct __UART_HandleTypeDef **}'
+ HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+                   ^~~~~~~~~~~~~~~~~~~
+../Core/Src/ORG1411_GPS.c:221:32: warning: passing argument 2 of 'HAL_UART_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+    HAL_UART_Receive_IT(&huart, (int*)Rx_Data, 1);
+                                ^
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:364:0,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/ORG1411_GPS.c:8:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:699:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'int *'
+ HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+                   ^~~~~~~~~~~~~~~~~~~
+../Core/Src/ORG1411_GPS.c:230:24: warning: passing argument 1 of 'HAL_UART_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+    HAL_UART_Receive_IT(&huart, (int*)Rx_Data, 1);
+                        ^
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:364:0,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/ORG1411_GPS.c:8:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:699:19: note: expected 'UART_HandleTypeDef * {aka struct __UART_HandleTypeDef *}' but argument is of type 'UART_HandleTypeDef ** {aka struct __UART_HandleTypeDef **}'
+ HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+                   ^~~~~~~~~~~~~~~~~~~
+../Core/Src/ORG1411_GPS.c:230:32: warning: passing argument 2 of 'HAL_UART_Receive_IT' from incompatible pointer type [-Wincompatible-pointer-types]
+    HAL_UART_Receive_IT(&huart, (int*)Rx_Data, 1);
+                                ^
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:364:0,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/ORG1411_GPS.c:8:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:699:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'int *'
+ HAL_StatusTypeDef HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size);
+                   ^~~~~~~~~~~~~~~~~~~
+../Core/Src/ORG1411_GPS.c:232:44: warning: passing argument 1 of 'convert_Coordinate' from incompatible pointer type [-Wincompatible-pointer-types]
+  valid_Coordinate_GPS = convert_Coordinate(&huart, lat_Array, lng_Array);
+                                            ^
+../Core/Src/ORG1411_GPS.c:179:5: note: expected 'UART_HandleTypeDef * {aka struct __UART_HandleTypeDef *}' but argument is of type 'UART_HandleTypeDef ** {aka struct __UART_HandleTypeDef **}'
+ int convert_Coordinate(UART_HandleTypeDef *huart, char *lat_Array, char *lng_Array)
+     ^~~~~~~~~~~~~~~~~~
+../Core/Src/ORG1411_GPS.c:204:6: warning: variable 'valid_Coordinate_GPS' set but not used [-Wunused-but-set-variable]
+  int valid_Coordinate_GPS;
+      ^~~~~~~~~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:36: Core/Src/ORG1411_GPS.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.

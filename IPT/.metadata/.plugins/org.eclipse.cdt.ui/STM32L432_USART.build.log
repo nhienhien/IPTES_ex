@@ -1,0 +1,10 @@
+09:26:58 **** Incremental Build of configuration Debug for project STM32L432_USART ****
+make -j8 all 
+arm-none-eabi-size   STM32L432_USART.elf 
+   text	   data	    bss	    dec	    hex	filename
+  56312	    544	   2864	  59720	   e948	STM32L432_USART.elf
+Finished building: default.size.stdout
+ 
+
+09:26:59 Build Finished. 0 errors, 0 warnings. (took 609ms)
+

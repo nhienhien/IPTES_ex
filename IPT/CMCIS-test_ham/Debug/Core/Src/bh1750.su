@@ -1,0 +1,4 @@
+bh1750.c:12:6:BH1750_Init	8	static
+bh1750.c:30:6:BH1750_Cmd_Write	32	static
+bh1750.c:38:6:BH1750_Start	8	static
+bh1750.c:44:10:BH1750_Read	32	static

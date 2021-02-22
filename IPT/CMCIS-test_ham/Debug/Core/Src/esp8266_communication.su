@@ -1,0 +1,3 @@
+esp8266_communication.c:10:13:esp8266_write_bytes	16	static
+esp8266_communication.c:14:13:esp8266_send_packet	32	static
+esp8266_communication.c:21:6:esp8266_send_value	88	static
